@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: PEC4
+Version: 0.0.1
+Summary: Ejercicio PEC4
+Home-page: 
+Author: Eloy Mor
+Author-email: emorp@uoc.edu
+License: MIT License
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary

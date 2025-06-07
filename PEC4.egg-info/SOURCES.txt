@@ -1,0 +1,16 @@
+LICENSE
+setup.py
+PEC4.egg-info/PKG-INFO
+PEC4.egg-info/SOURCES.txt
+PEC4.egg-info/dependency_links.txt
+PEC4.egg-info/top_level.txt
+funciones_pec4/__init__.py
+funciones_pec4/ejercicio1.py
+funciones_pec4/ejercicio2.py
+funciones_pec4/ejercicio3.py
+funciones_pec4/ejercicio4.py
+funciones_pec4/ejercicio5.py
+funciones_pec4/fechas.py
+funciones_pec4/formatos.py
+funciones_pec4/plotting.py
+tests/test_ejercicio1.py
