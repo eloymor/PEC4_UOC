@@ -1,8 +1,13 @@
+import matplotlib
 from matplotlib import pyplot as plt
 import seaborn as sns
 import pandas as pd
 import os
 from funciones_pec4.formatos import print_separador
+
+# Desactivamos la salida de gráficos en la terminal,
+# evitamos error en los tests.
+matplotlib.use('Agg')
 
 
 sns.set_style("whitegrid") # Estilo general de seaborn

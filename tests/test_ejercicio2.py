@@ -14,6 +14,7 @@ def obtener_df() -> pd.DataFrame:
     """
 
     # Buscamos la rura principal del proyecto
+    # https://stackoverflow.com/questions/30218802/get-parent-of-current-directory-from-python-script
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
     # Para este test necesitamos el fichero csv auténtico, la función ejercicio1() buscara
     # el archivo csv en la carpeta data/

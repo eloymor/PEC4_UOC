@@ -42,16 +42,17 @@ def calcular_periodos_sequia(df: pd.DataFrame, nivel: float = 60.0) -> list[list
     return periods
 
 
-def ejercicio5(df: pd.DataFrame) -> None:
+def ejercicio5(df: pd.DataFrame) -> list[list[float]]:
     """
     Muestra por pantalla los periodos de sequía de la serie 'nivell_perc_smooth' del DataFrame.
     :param df: pd.DataFrame completo con los datos.
-    :return: None. Esta función no retorna nada.
+    :return: Lista de listas con los periodos de sequía.
     """
-    r = calcular_periodos_sequia(df)
+
+    periodos: list[list[float]] = calcular_periodos_sequia(df)
     print_separador()
     print("Lista de periodos de sequía:")
-    print(r)
+    print(periodos)
     print_separador()
 
-    pass
+    return periodos

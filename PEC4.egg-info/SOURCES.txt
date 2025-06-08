@@ -14,3 +14,7 @@ funciones_pec4/fechas.py
 funciones_pec4/formatos.py
 funciones_pec4/plotting.py
 tests/test_ejercicio1.py
+tests/test_ejercicio2.py
+tests/test_ejercicio3.py
+tests/test_ejercicio4.py
+tests/test_ejercicio5.py
