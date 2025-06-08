@@ -1,6 +1,10 @@
+"""
+Módulo con funciones auxiliares para fechas.
+"""
+
 import datetime
 
-def toYearFraction(date: datetime.datetime | datetime.date) -> float:
+def to_year_fraction(date: datetime.datetime | datetime.date) -> float:
     """
     A partir de una fecha, devuelve el año decimal.
 

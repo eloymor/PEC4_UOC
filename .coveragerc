@@ -1,0 +1,5 @@
+   [run]
+   source = funciones_pec4
+
+   [report]
+   show_missing = True

@@ -1,9 +1,18 @@
+"""
+Módulo con las funciones del ejercicio 4.
+"""
+
 import pandas as pd
 from scipy.signal import savgol_filter
 import numpy as np
 from funciones_pec4.plotting import line_plot
 
-def filtro_savgol(df: pd.DataFrame, atr: str = 'nivell_perc', window: int = 1500, order: int = 3) -> pd.DataFrame:
+
+def filtro_savgol(df: pd.DataFrame,
+                  atr: str = 'nivell_perc',
+                  window: int = 1500,
+                  order: int = 3) -> (
+        pd.DataFrame):
     """
     Aplica el filtro Savitzky-Golay a la serie indicada.
 

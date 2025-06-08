@@ -1,7 +1,11 @@
-from funciones_pec4.formatos import print_separador
-from funciones_pec4.fechas import toYearFraction
-from funciones_pec4.plotting import line_plot
+"""
+Módulo con las funciones del ejercicio 3.
+"""
+
 import pandas as pd
+from funciones_pec4.formatos import print_separador
+from funciones_pec4.fechas import to_year_fraction
+from funciones_pec4.plotting import line_plot
 
 
 def ejercicio3(df: pd.DataFrame) -> pd.DataFrame:
@@ -46,13 +50,10 @@ def ejercicio3(df: pd.DataFrame) -> pd.DataFrame:
     # Función toYearFraction cargada del módulo pec4.fechas.
     # Creamos la nueva columna, recorremos la serie 'dia' con apply y la combinación
     # de la función lambda + toYearFraction.
-    df['dia_decimal'] = df['dia'].apply(lambda x: toYearFraction(x))
+    df['dia_decimal'] = df['dia'].apply(lambda x: to_year_fraction(x))
 
     # Función line_plot cargada del módulo pec4.plotting.
     # Guardamos un gráfico con la serie 'dia_decimal' vs. 'nivell_perc'
     line_plot(df)
 
     return df
-
-
-

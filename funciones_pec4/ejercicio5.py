@@ -1,3 +1,7 @@
+"""
+Módulo con las funciones del ejercicio 5.
+"""
+
 import pandas as pd
 from funciones_pec4.formatos import print_separador
 

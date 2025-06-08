@@ -1,3 +1,7 @@
+"""
+Módulo con las funciones del ejercicio 2.
+"""
+
 import pandas as pd
 from funciones_pec4.formatos import print_separador
 
@@ -6,8 +10,8 @@ def ejercicio2(df: pd.DataFrame, filtro: str = 'La Baells') -> pd.DataFrame:
     """
     Modifica las columnas del DataFrame por unas más normalizadas,
     imprime en pantalla los pantanos únicos del DataFrame,
-    limpia el campo 'estacio' del DataFrame, eliminando la palabra "Embassament de" y los parentesis y
-    filtra el DataFrame por el campo 'estacio' según el parámetro filtro.
+    limpia el campo 'estacio' del DataFrame, eliminando la palabra "Embassament de"
+    y los parentesis y filtra el DataFrame por el campo 'estacio' según el parámetro filtro.
     (por defecto filtra por 'La Baells'.)
 
     :param df: pd.DataFrame del ejercicio 1
@@ -22,21 +26,24 @@ def ejercicio2(df: pd.DataFrame, filtro: str = 'La Baells') -> pd.DataFrame:
     # Obtenemos las columnas originales y las renombramos con las proporcionadas
     columnas_iniciales: list[str] = list(df.columns)
     columnas_final: list[str] = ['dia', 'estacio', 'nivell_msnm', 'nivell_perc', 'volum']
-    # Creamos un diccionario con las claves como las columnas originales y los valores como las nuevas
+    # Creamos un diccionario con las claves como las columnas originales
+    # y los valores como las nuevas
     columnas_dict: dict[str, str] = dict(zip(columnas_iniciales, columnas_final))
     df.rename(columns=columnas_dict, inplace=True)
 
-    # La variable pantanos_unicos realmente es de tipo numpy.array, pero para no cargar modulos que no utilizaremos
-    # en este ejercicio, le añado la hint de tipo list (a efectos prácticos será lo mismo)
+    # La variable pantanos_unicos realmente es de tipo numpy.array, pero para no cargar
+    # modulos que no utilizaremos en este ejercicio, le añado la hint de tipo list
+    # (a efectos prácticos será lo mismo)
     pantanos_unicos: list[str] = df['estacio'].unique()
     print_separador()
-    print(f"Los pantanos únicos del DataFrame son:\n")
+    print("Los pantanos únicos del DataFrame son:\n")
     for i, pantano in enumerate(pantanos_unicos):
         print(f"{i} - {pantano}\n")
     print_separador()
 
-    # Utilizaremos la función str.replace de pandas con la cual podemos utilizar expresiones regulares.
-    # Encadenaremos dos, una para eliminar la palabra "Embassament de" y otra para eliminar los parentesis.
+    # Utilizaremos la función str.replace de pandas con la cual podemos
+    # utilizar expresiones regulares. Encadenaremos dos, una para eliminar
+    # la palabra "Embassament de" y otra para eliminar los parentesis.
     # https://stackoverflow.com/questions/22588316/pandas-applying-regex-to-replace-values
     df['estacio'] = df['estacio'].str.replace(r'^Embassament de\s*', '', regex=True) \
         .str.replace(r'\s*\(.*?\)', '', regex=True)
@@ -47,5 +54,3 @@ def ejercicio2(df: pd.DataFrame, filtro: str = 'La Baells') -> pd.DataFrame:
 
     # Devolvemos el DataFrame filtrado
     return df_filtrado
-
-

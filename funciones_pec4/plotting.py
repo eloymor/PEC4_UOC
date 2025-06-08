@@ -1,8 +1,12 @@
+"""
+Módulo auxiliar con funciones para graficar.
+"""
+
+import os
 import matplotlib
 from matplotlib import pyplot as plt
 import seaborn as sns
 import pandas as pd
-import os
 from funciones_pec4.formatos import print_separador
 
 # Desactivamos la salida de gráficos en la terminal,
@@ -35,7 +39,12 @@ def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
         # Gráfico original, sin suavizar
         ax = sns.lineplot(x='dia_decimal', y='nivell_perc', data=df, label='Original')
         # Gráfico suavizado, con línea de ancho 3, unimos al axe del original
-        sns.lineplot(x='dia_decimal', y='nivell_perc_smooth', data=df, ax=ax, linewidth=3, label='Suavizado')
+        sns.lineplot(x='dia_decimal',
+                     y='nivell_perc_smooth',
+                     data=df,
+                     ax=ax,
+                     linewidth=3,
+                     label='Suavizado')
         # Mostramos la leyenda, posición inferior centro
         ax.legend(loc='lower center')
         # Para posterior guardado de la imagen

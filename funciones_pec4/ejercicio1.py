@@ -1,15 +1,19 @@
-from funciones_pec4.formatos import print_separador
-import pandas as pd
+"""
+Módulo con las funciones del ejercicio 1.
+"""
+
 import os
 import sys
+import pandas as pd
+from funciones_pec4.formatos import print_separador
 
 
 def ejercicio1(filename: str | None = None, folder: str = 'data') -> pd.DataFrame | None:
     """
     Carga un fichero .csv en un DataFrame y muestra información del DataFrame.
 
-    :param filename: Nombre con extensión del fichero a cargar. Si no se especifica, se carga el primer fichero de tipo
-     .csv en la carpeta indicada.
+    :param filename: Nombre con extensión del fichero a cargar.
+    Si no se especifica, se carga el primer fichero de tipo .csv en la carpeta indicada.
     :param folder: Carpeta donde buscar el fichero. Por defecto 'data'.
     :return: pd.DataFrame con el fichero cargado, en caso de error retorna None.
     """
@@ -51,12 +55,12 @@ def ejercicio1(filename: str | None = None, folder: str = 'data') -> pd.DataFram
     print(df.head())
     print_separador()
 
-    print(f"\n\nMostrando las columnas originales del DataFrame:")
+    print("\n\nMostrando las columnas originales del DataFrame:")
     print_separador()
     print(list(df.columns))
     print_separador()
 
-    print(f"\n\nMostrando información del DataFrame:")
+    print("\n\nMostrando información del DataFrame:")
     print_separador()
     print(df.info())
     print_separador()

@@ -20,7 +20,8 @@ def main():
     # añadimos los argumentos al parser
     parser.add_argument('-ex', type=str, default=None,
                         help="""Ejecuta el ejercicio indicado ('ex 1', 'ex 2', etc)
-                             Si no se especifica ningún argumento, se ejecutan todos los ejercicios.""")
+                             Si no se especifica ningún argumento, 
+                             se ejecutan todos los ejercicios.""")
     parser.add_argument('-filename', type=str, default=None,
                         help="""Nombre del archivo con extension csv a cargar, si no se especifica 
                          ninguno se carga el primer archivo .csv en la carpeta indicada.""")
@@ -54,7 +55,7 @@ def main():
         print_header("Ejercicio 1")
         df: pd.DataFrame = ejercicio1(filename, folder)
         print_header("Ejercicio 2")
-        df_labaells: pd.DataFrame = ejercicio2(df)
+        ejercicio2(df)
 
 
     def ex_3(filename=None, folder='./data'):
@@ -69,7 +70,7 @@ def main():
         print_header("Ejercicio 2")
         df_labaells: pd.DataFrame = ejercicio2(df)
         print_header("Ejercicio 3")
-        df_labaells = ejercicio3(df_labaells)
+        ejercicio3(df_labaells)
 
 
     def ex_4(filename=None, folder='./data'):
@@ -86,7 +87,7 @@ def main():
         print_header("Ejercicio 3")
         df_labaells = ejercicio3(df_labaells)
         print_header("Ejercicio 4")
-        df_labaells_smoothen: pd.DataFrame = ejercicio4(df_labaells)
+        ejercicio4(df_labaells)
 
 
     def ex_5(filename=None, folder='./data'):
@@ -138,4 +139,3 @@ def main():
 
 if __name__ == '__main__':
     main() # Punto de entrada del programa
-
