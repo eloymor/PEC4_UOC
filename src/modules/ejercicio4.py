@@ -5,7 +5,7 @@ Módulo con las funciones del ejercicio 4.
 import pandas as pd
 from scipy.signal import savgol_filter
 import numpy as np
-from funciones_pec4.plotting import line_plot
+from modules.plotting import line_plot
 
 
 def filtro_savgol(df: pd.DataFrame,

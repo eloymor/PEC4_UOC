@@ -1,8 +1,8 @@
 from pathlib import Path
 import pytest
 import pandas as pd
-from funciones_pec4.ejercicio1 import ejercicio1
-from funciones_pec4.ejercicio2 import ejercicio2
+from modules.ejercicio1 import ejercicio1
+from modules.ejercicio2 import ejercicio2
 
 
 # Creamos fixture con el DataFrame original, necesario para este test.

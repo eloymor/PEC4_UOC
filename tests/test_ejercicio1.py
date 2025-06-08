@@ -1,7 +1,7 @@
 import os
 import pytest
 import pandas as pd
-from funciones_pec4.ejercicio1 import ejercicio1
+from modules.ejercicio1 import ejercicio1
 
 
 # Creamos un fixture para crear un archivo CSV en un directorio temporal

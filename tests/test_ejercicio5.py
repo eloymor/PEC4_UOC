@@ -2,11 +2,11 @@ import os
 import pandas as pd
 import pytest
 from pathlib import Path
-from funciones_pec4.ejercicio1 import ejercicio1
-from funciones_pec4.ejercicio2 import ejercicio2
-from funciones_pec4.ejercicio3 import ejercicio3
-from funciones_pec4.ejercicio4 import ejercicio4
-from funciones_pec4.ejercicio5 import ejercicio5
+from modules.ejercicio1 import ejercicio1
+from modules.ejercicio2 import ejercicio2
+from modules.ejercicio3 import ejercicio3
+from modules.ejercicio4 import ejercicio4
+from modules.ejercicio5 import ejercicio5
 
 @pytest.fixture
 def obtener_df() -> pd.DataFrame:

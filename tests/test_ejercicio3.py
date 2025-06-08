@@ -3,9 +3,9 @@ import pytest
 import os
 from pathlib import Path
 import datetime
-from funciones_pec4.ejercicio1 import ejercicio1
-from funciones_pec4.ejercicio2 import ejercicio2
-from funciones_pec4.ejercicio3 import ejercicio3
+from modules.ejercicio1 import ejercicio1
+from modules.ejercicio2 import ejercicio2
+from modules.ejercicio3 import ejercicio3
 
 
 @pytest.fixture

@@ -7,7 +7,7 @@ import matplotlib
 from matplotlib import pyplot as plt
 import seaborn as sns
 import pandas as pd
-from funciones_pec4.formatos import print_separador
+from modules.formatos import print_separador
 
 # Desactivamos la salida de gráficos en la terminal,
 # evitamos error en los tests.
@@ -17,6 +17,8 @@ matplotlib.use('Agg')
 sns.set_style("whitegrid") # Estilo general de seaborn
 plt.style.use('seaborn-v0_8-whitegrid') # Estilo general de matplotlib
 
+# Controlamos que la salida de las imágenes sea en el directorio raíz del proyecto
+abs_path: str = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
 def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
     """
@@ -28,8 +30,8 @@ def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
     """
 
     # Creamos carpeta 'img' si no existe, para evitar posible error de ejecución
-    if not os.path.exists('img'):
-        os.makedirs('img')
+    if not os.path.exists(os.path.join(abs_path, 'img')):
+        os.makedirs(os.path.join(abs_path, 'img'))
 
     # Creamos la única figura de este gráfico, definimos tamaño
     fig: plt.Figure = plt.figure(figsize=(10, 6))
@@ -63,9 +65,10 @@ def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
     # Añadimos subtítulo con el nombre
     fig.suptitle('Eloy Mor')
     # Guardamos imagen
-    plt.savefig(f"img/{nombre}.png")
+    ruta_img: str = os.path.join(abs_path, 'img', nombre + '.png')
+    plt.savefig(ruta_img)
     # Cerramos figura
     plt.close(fig)
     print_separador()
-    print(f"Imágen guardada correctamente en 'img/{nombre}.png'")
+    print(f"Imágen guardada correctamente en '{ruta_img}'")
     print_separador()

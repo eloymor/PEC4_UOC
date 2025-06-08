@@ -3,7 +3,7 @@ Módulo con las funciones del ejercicio 2.
 """
 
 import pandas as pd
-from funciones_pec4.formatos import print_separador
+from modules.formatos import print_separador
 
 
 def ejercicio2(df: pd.DataFrame, filtro: str = 'La Baells') -> pd.DataFrame:

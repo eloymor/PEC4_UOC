@@ -1,0 +1,129 @@
+Metadata-Version: 2.4
+Name: funciones_PEC4
+Version: 0.0.1
+Summary: Modulo de funciones para PEC4
+Home-page: https://github.com/eloymor/PEC4_UOC
+Author: Eloy Mor
+Author-email: emorp@uoc.edu
+License: MIT License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas~=2.3.0
+Requires-Dist: seaborn~=0.13.2
+Requires-Dist: matplotlib~=3.10.3
+Requires-Dist: numpy~=2.2.6
+Requires-Dist: scipy~=1.15.3
+Requires-Dist: setuptools~=80.9.0
+Requires-Dist: pytest~=8.4.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PEC 4 - ProgramaciÃ³n para la ciencia de datos  (UOC)
+
+Proyecto escrito en Python para la prÃ¡ctica cuatro (**PEC4**) de la asignatura **ProgramaciÃ³n para la ciencia de datos**, 
+UOC. Este programa ejecuta una serie de ejercicios de forma secuencial o individual con funciones de procesamiento y analisis
+de datos. Se ha diseÃ±ado para funcionar a travÃ©s de la terminal de comandos.
+
+
+Autor: **Eloy Mor**  
+Fecha: **06/06/2025**
+
+---
+
+## CaracterÃ­sticas 
+
+- **Command-line Interface (CLI):** Especifica el nÃºmero de ejercicio con un simple comando de la terminal.
+- **Multiples ejercicios:** Los ejercicios se evaluan de forma secuencial, siempre se ejecutarÃ¡n los ejercicios anteriores al especificado.
+- **Control de ficheros CSV:** Carga y procesa automÃ¡ticamente ficheros `.csv` ubicados en la carpeta especificada.
+- **Opciones de personalizaciÃ³n:** Se puede especificar el nombre concreto del fichero y la carpeta donde buscar.
+- **CÃ³digo modular y reutilizable:** Cada ejercicio tiene una funciÃ³n / mÃ³dulo dedicado.
+
+## Prerrequisitos
+
+- **Version de Python:** Este proyecto solo es compatible con Python 3.x. 
+- Se recomienda instalar este programa dentro de un entorno virtual:
+    ```bash
+   pip install virtualenv
+   virtualenv .venv
+   ```
+    ActivaciÃ³n del entorno en Windows:
+    ```bash
+   .\.venv\Scripts\activate
+   ```
+   ActivaciÃ³n en Linux/macOS:
+    ```bash
+   source .venv/bin/activate
+   ```
+- **Dependencias:** Instala los paquetes necesarios con `pip`:
+  ```bash
+  pip install -r requirements.txt
+  ```
+- **MÃ³dulos adicionales:** Este fichero incluye un mÃ³dulo propio: `funciones_pec4`. Es necesario para la el funcionamiento del programa.
+
+---
+
+## InstalaciÃ³n del mÃ³dulo `funciones_pec4`
+
+1. En la carpeta raÃ­z del proyecto, ejecuta el siguiente comando para aÃ±adir la librerÃ­a `funciones_pec4` con `setuptools`:
+    ```bash
+   python setup.py sdist
+   ```
+2. Instala la librerÃ­a con:
+    ```bash
+   pip install .
+    ```
+   **Nota**: Si se van a ejecutar los tests, el comando de instalaciÃ³n recomendado es:
+    ```bash
+   pip install -e .
+    ```
+    Esta opciÃ³n cargarÃ¡ la libreria desde la carpeta local en vez de la _Lib_ de Python y darÃ¡ menos problemas al realizar los test con `pytest`
+---
+
+1. Este proyecto se encuentra disponible pÃºblicamente en GitHub. Se puede descargar con:
+   ```bash
+   git clone https://github.com/eloymor/PEC4_UOC.git
+   ```
+2. SitÃºate en la carpeta raÃ­z del proyecto:
+   ```bash
+   cd PEC4
+   ```
+
+---
+
+## UtilizaciÃ³n
+
+Ejecuta el programa con la lÃ­nea de comandas (terminal). Las siguientes opciones estÃ¡n disponibles:
+
+
+### Comandos:
+- `-ex`: Indica el ejercicio a ejecutar (ej: `-ex 1` para ejercicio 1, `-ex 2` para ejercicio 1 and 2, etc.). 0 para ejecutarlos todos.
+- `-filename`: Indica el nombre del fichero `.csv` a analizar. Si se omite, el primer fichero `.csv` por orden alfabÃ©tico en la carpeta especificada, serÃ¡ el que se utilizarÃ¡.
+- `-folder`: Define la ruta a la carpeta dÃ³nde se encuentre el fichero `.csv`. Por defecto: `./data`.
+- `-h` o `--help`: Muestra la ayuda.
+
+### Ejemplos de utlizaciÃ³n:
+
+- Ejecuta todos los ejercicios con la configuraciÃ³n por defecto:
+  ```bash
+  python main.py
+  ```
+- Ejecuta un ejercicio en concreto (por ejemplo el ejercicio 1):
+  ```bash
+  python main.py -ex 1
+  ```
+- Ejecuta un ejercicio con un archivo y carpeta especificada:
+  ```bash
+  python main.py -ex 2 -filename data.csv -folder ./data_files
+  ```
+---
+
+## Project Structure
