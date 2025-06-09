@@ -1,3 +1,7 @@
+"""
+Test ejercicio2.py.
+"""
+
 from pathlib import Path
 import pytest
 import pandas as pd
@@ -15,10 +19,10 @@ def obtener_df() -> pd.DataFrame:
 
     # Buscamos la rura principal del proyecto
     # https://stackoverflow.com/questions/30218802/get-parent-of-current-directory-from-python-script
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
+    base_dir: Path = Path(__file__).resolve().parent.parent
     # Para este test necesitamos el fichero csv auténtico, la función ejercicio1() buscara
     # el archivo csv en la carpeta data/
-    path_csv: Path = BASE_DIR / "data"
+    path_csv: Path = base_dir / "data"
     df: pd.DataFrame = ejercicio1(folder=str(path_csv))
 
     return df

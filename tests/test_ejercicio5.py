@@ -1,7 +1,10 @@
-import os
+"""
+Test ejercicio5.py.
+"""
+
+from pathlib import Path
 import pandas as pd
 import pytest
-from pathlib import Path
 from modules.ejercicio1 import ejercicio1
 from modules.ejercicio2 import ejercicio2
 from modules.ejercicio3 import ejercicio3
@@ -14,8 +17,8 @@ def obtener_df() -> pd.DataFrame:
     Función para obtener el DataFrame del ejercicio5.
     :return: pd.DataFrame cargado por el ejercicio4.
     """
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
-    path_csv: Path = BASE_DIR / "data"
+    base_dir: Path = Path(__file__).resolve().parent.parent
+    path_csv: Path = base_dir / "data"
     df: pd.DataFrame = ejercicio1(folder=str(path_csv))
     df_labaells: pd.DataFrame = ejercicio2(df)
     df_labaells= ejercicio3(df_labaells)

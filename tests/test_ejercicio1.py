@@ -1,3 +1,7 @@
+"""
+Test ejercio1.py.
+"""
+
 import os
 import pytest
 import pandas as pd
@@ -16,7 +20,7 @@ def dummy_csv_file(tmpdir: os.path) -> str:
     file_path = tmpdir.join('test.csv')
     # Escribimos unas columnas y unas filas con valores dummy
     data = 'col1,col2,col3\n1,2,3\n4,5,6\n'
-    with open(file_path, 'w') as f:
+    with open(file_path, 'w', encoding='utf-8') as f:
         f.write(data)
     return str(file_path)
 
@@ -71,7 +75,7 @@ def test_ejercicio1_csv_no_encontrado() -> None:
         ejercicio1(filename=filename, folder=folder)
 
 
-def test_ejercicio1_buscar_csv(dummy_csv_file: str, tmpdir) -> None:
+def test_ejercicio1_buscar_csv(dummy_csv_file: str) -> None:
     """
     Caso carpeta correcta y fichero csv sin especificar pero existente
     :param dummy_csv_file: str, nombre del fichero csv.

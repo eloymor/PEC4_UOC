@@ -1,7 +1,11 @@
+"""
+Test ejercicio4.py.
+"""
+
 import os
+from pathlib import Path
 import pandas as pd
 import pytest
-from pathlib import Path
 from modules.ejercicio1 import ejercicio1
 from modules.ejercicio2 import ejercicio2
 from modules.ejercicio3 import ejercicio3
@@ -13,8 +17,8 @@ def obtener_df() -> pd.DataFrame:
     Función para obtener el DataFrame del ejercicio4.
     :return: pd.DataFrame cargado por el ejercicio3.
     """
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
-    path_csv: Path = BASE_DIR / "data"
+    base_dir: Path = Path(__file__).resolve().parent.parent
+    path_csv: Path = base_dir / "data"
     df: pd.DataFrame = ejercicio1(folder=str(path_csv))
     df_labaells: pd.DataFrame = ejercicio2(df)
     df_labaells= ejercicio3(df_labaells)
@@ -29,8 +33,8 @@ def obtener_ruta_img() -> str:
     :return: str, ruta relativa de la imagen.
     """
 
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
-    path_img: Path = BASE_DIR / 'img'
+    base_dir: Path = Path(__file__).resolve().parent.parent
+    path_img: Path = base_dir / 'img'
 
     return str(path_img)
 
@@ -59,6 +63,7 @@ def test_ejercicio4_img(obtener_ruta_img: str) -> None:
     :return: None
     """
     # Listamos ficheros en la carpeta img
+    sorted_img_list: list = [] # inicializamos variable (vacía)
     try:
         img_list = os.listdir(obtener_ruta_img)
         # Ordenamos la lista de ficheros por longitud, orden ascendente
@@ -68,7 +73,7 @@ def test_ejercicio4_img(obtener_ruta_img: str) -> None:
         pass
 
     assert os.path.exists(obtener_ruta_img), 'La carpeta img no existe.'
-    assert len(img_list) > 0 , 'Debe haber almenos una imagen en la carpeta img.'
-    assert img_list[-1].endswith('.png'), 'La imagen debe tener extensión .png.'
-    assert 'Smoothed_Eloy_Mor'.lower() in img_list[-1].lower() , \
+    assert len(sorted_img_list) > 0 , 'Debe haber almenos una imagen en la carpeta img.'
+    assert sorted_img_list[-1].endswith('.png'), 'La imagen debe tener extensión .png.'
+    assert 'Smoothed_Eloy_Mor'.lower() in sorted_img_list[-1].lower() , \
         'la imagen debe contener el nombre del alumno.'

@@ -24,7 +24,7 @@ def main():
                              se ejecutan todos los ejercicios.""")
     parser.add_argument('-filename', type=str, default=None,
                         help="""Nombre del archivo con extension csv a cargar, si no se especifica 
-                         ninguno se carga el primer archivo .csv en la carpeta indicada.""")
+                        ninguno se carga el primer archivo .csv en la carpeta indicada.""")
     parser.add_argument('-folder', type=str, default='./data',
                         help="Ruta de la carpeta donde buscar el archivo, por defecto '/data'.")
 

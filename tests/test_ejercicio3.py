@@ -1,8 +1,11 @@
-import pandas as pd
-import pytest
+"""
+Test ejercicio3.py.
+"""
+
 import os
 from pathlib import Path
-import datetime
+import pandas as pd
+import pytest
 from modules.ejercicio1 import ejercicio1
 from modules.ejercicio2 import ejercicio2
 from modules.ejercicio3 import ejercicio3
@@ -15,8 +18,8 @@ def obtener_df() -> pd.DataFrame:
     :return: pd.DataFrame cargado por el ejercicio2.
     """
 
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
-    path_csv: Path = BASE_DIR / "data"
+    base_dir: Path = Path(__file__).resolve().parent.parent
+    path_csv: Path = base_dir / "data"
     df: pd.DataFrame = ejercicio1(folder=str(path_csv))
     df_labaells: pd.DataFrame = ejercicio2(df)
 
@@ -30,8 +33,8 @@ def obtener_ruta_img() -> str:
     :return: str, ruta relativa de la imagen.
     """
 
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
-    path_img: Path = BASE_DIR / 'img'
+    base_dir: Path = Path(__file__).resolve().parent.parent
+    path_img: Path = base_dir / 'img'
 
     return str(path_img)
 

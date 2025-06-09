@@ -3,6 +3,7 @@ Módulo auxiliar con funciones para graficar.
 """
 
 import os
+from pathlib import Path
 import matplotlib
 from matplotlib import pyplot as plt
 import seaborn as sns
@@ -10,7 +11,7 @@ import pandas as pd
 from modules.formatos import print_separador
 
 # Desactivamos la salida de gráficos en la terminal,
-# evitamos error en los tests.
+# evitamos posibles errores al ejecutar los tests con pytest.
 matplotlib.use('Agg')
 
 
@@ -18,7 +19,7 @@ sns.set_style("whitegrid") # Estilo general de seaborn
 plt.style.use('seaborn-v0_8-whitegrid') # Estilo general de matplotlib
 
 # Controlamos que la salida de las imágenes sea en el directorio raíz del proyecto
-abs_path: str = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+abs_path: Path = Path(__file__).resolve().parent.parent.parent
 
 def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
     """

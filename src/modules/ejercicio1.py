@@ -3,6 +3,7 @@ Módulo con las funciones del ejercicio 1.
 """
 
 import os
+from pathlib import Path
 import sys
 import pandas as pd
 from modules.formatos import print_separador
@@ -17,9 +18,11 @@ def ejercicio1(filename: str | None = None, folder: str = 'data') -> pd.DataFram
     :param folder: Carpeta donde buscar el fichero. Por defecto 'data'.
     :return: pd.DataFrame con el fichero cargado, en caso de error retorna None.
     """
-    # El script main.py se encuentra en la carpeta src, por lo que la ruta relativa puede no funcionar,
-    # sobretodo si las carpetas de datos están fuera del directorio src.
-    abs_path: str = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../')
+    # El script main.py se encuentra en la carpeta src, por lo que la ruta relativa a la raíz
+    # del proyecto no va a funcionar. Convertimos ,de forma transparente para el usuario,
+    # a ruta absoluta.
+    # abs_path: str = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../')
+    abs_path: Path = Path(__file__).resolve().parent.parent.parent # raíz del proyecto
 
     # Si la ruta del fichero no se especifica, se carga el primer fichero de tipo .csv
     # en la carpeta indicada, por defecto 'data'.
@@ -44,7 +47,6 @@ def ejercicio1(filename: str | None = None, folder: str = 'data') -> pd.DataFram
     try:
         # Cargamos el fichero en un DataFrame
         df = pd.read_csv(os.path.join(abs_path, folder, filename))
-
     # Excepción para error de ruta
     except FileNotFoundError:
         print(f"Error: El fichero '{filename}' no se encuentra en la carpeta '{folder}'.")

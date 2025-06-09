@@ -1,10 +1,12 @@
 from setuptools import setup, find_packages
 
+# Función para listar las dependencias desde el archivo requirements.txt
 def parse_requirements(filename):
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         lines = file.read().splitlines()
+        # Eliminamos las líneas vacías y las líneas que comienzan con #
         return [line for line in lines if line.strip()
-                and not line.startswith("#")]
+                and not line.startswith('#')]
 
 
 
