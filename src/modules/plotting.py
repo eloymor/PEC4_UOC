@@ -3,7 +3,6 @@ Módulo auxiliar con funciones para graficar.
 """
 
 import os
-from pathlib import Path
 import matplotlib
 from matplotlib import pyplot as plt
 import seaborn as sns
@@ -19,7 +18,7 @@ sns.set_style("whitegrid") # Estilo general de seaborn
 plt.style.use('seaborn-v0_8-whitegrid') # Estilo general de matplotlib
 
 # Controlamos que la salida de las imágenes sea en el directorio raíz del proyecto
-abs_path: Path = Path(__file__).resolve().parent.parent.parent
+abs_path: str = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../')
 
 def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
     """
@@ -65,8 +64,8 @@ def line_plot(df: pd.DataFrame, smoothen: bool = False) -> None:
     ax.set_ylabel('% Volumen')
     # Añadimos subtítulo con el nombre
     fig.suptitle('Eloy Mor')
-    # Guardamos imagen
-    ruta_img: str = os.path.join(abs_path, 'img', nombre + '.png')
+    # Guardamos imagen, creamos ruta absoluta porque vamos a mostrarla por consola.
+    ruta_img: str = os.path.abspath(os.path.join(abs_path, 'img', nombre + '.png'))
     plt.savefig(ruta_img)
     # Cerramos figura
     plt.close(fig)

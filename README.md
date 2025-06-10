@@ -41,6 +41,10 @@ alfabético en la carpeta especificada, será el que se utilizará.
 
 ### Ejemplos de utlización:
 
+- Sitúate en el directorio donde se encuentra el fichero main.py:
+    ```bash
+  cd src
+    ```
 - Ejecuta todos los ejercicios con la configuración por defecto:
   ```bash
   python main.py
@@ -55,5 +59,67 @@ alfabético en la carpeta especificada, será el que se utilizará.
   ```
   
 **IMPORTANTE:** Todas las rutas indicadas deben ser **relativas** al directorio **raíz** del proyecto.
+
+### Fichero `.csv`:
+
+
+Dentro del archivo comprimido (`.zip`), junto con el resto del proyecto, ya se incluye la carpeta `\data` con el
+corresopndiente dataset a utilizar.
+
+El fichero `.csv` se puede obtener del siguiente enlace:
+- [Enlace al dataset](https://analisi.transparenciacatalunya.cat/Medi-Ambient/Quantitat-d-aigua-als-embassaments-de-les-Conques-/gn9e-3qhr/about_data)
+
+---
+
+## Tests
+
+Los test se ejecutan mediante la librería `pytest`. Si se ha ejecutado el scrip de instalación mediante `setuptools`, 
+esta ya estará instalada en el entorno de trabajo.
+En caso contrario instalar desde el fichero `requirements.txt` o manualmente con `pip`:
+```bash
+    pip install -r requirements.txt
+```
+o bien
+```bash
+    pip install pytest
+```
+
+Para ejecutar los test y mostrar su cobertura, debemos ejecutar el siguiente comando en el directorio **raíz** del
+proyecto:
+```bash
+    pytest --cov=modules --cov-report=term-missing tests/
+```
+
+---
+
+## Linter
+
+He utilizado la librería `pylint`.
+
+**NOTA:** Este paquete no se contempla en el fichero `requirements.txt`, ya que realmente no es necesario para la
+ejecución de este proyecto, además que se podría utilizar cualquier otro linter.
+
+Se puede instalar con `pip`:
+```bash
+    pip install pylint
+```
+Para ejecutar pylint, nos situamos dentro la carpeta `src/`:
+```bash
+    cd src
+```
+Ejecutamos pylint en la carpeta src para analizar los ficheros de la carpeta modules y main.py:
+```bash
+    pylint .
+```
+Si se quiere analizar los test, nos debemos colocar otra vez en la carpeta **raíz** del proyecto y ejecutar:
+```bash
+    pylint .\tests\
+```
+
+---
+
+## Documentación
+
+Se encuentra disponible en la carpeta `doc/`, en el directorio principal. Abrir el fichero `index.html` en un navegador.
 
 ---

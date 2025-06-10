@@ -19,10 +19,9 @@ def ejercicio1(filename: str | None = None, folder: str = 'data') -> pd.DataFram
     :return: pd.DataFrame con el fichero cargado, en caso de error retorna None.
     """
     # El script main.py se encuentra en la carpeta src, por lo que la ruta relativa a la raíz
-    # del proyecto no va a funcionar. Convertimos ,de forma transparente para el usuario,
+    # del proyecto no va a funcionar. Convertimos, de forma transparente para el usuario,
     # a ruta absoluta.
-    # abs_path: str = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../')
-    abs_path: Path = Path(__file__).resolve().parent.parent.parent # raíz del proyecto
+    abs_path: str = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../')
 
     # Si la ruta del fichero no se especifica, se carga el primer fichero de tipo .csv
     # en la carpeta indicada, por defecto 'data'.
