@@ -41,7 +41,7 @@ alfabético en la carpeta especificada, será el que se utilizará.
 
 ### Ejemplos de utlización:
 
-- Sitúate en el directorio donde se encuentra el fichero main.py:
+- Sitúate en el directorio donde se encuentra el fichero main.py (`./src/`):
     ```bash
   cd src
     ```
@@ -73,8 +73,9 @@ El fichero `.csv` se puede obtener del siguiente enlace:
 
 ## Tests
 
-Los test se ejecutan mediante la librería `pytest`. Si se ha ejecutado el scrip de instalación mediante `setuptools`, 
-esta ya estará instalada en el entorno de trabajo.
+Los tests se ejecutan mediante la librería `pytest`. Adicionalmente, para el cálculo de cobertura del código principal
+mediante tests, se utiliza la librería `pytest-cov`. Si se ha ejecutado el scrip de instalación mediante `setuptools`, 
+estas ya estarán instaladas en el entorno de trabajo.
 En caso contrario instalar desde el fichero `requirements.txt` o manualmente con `pip`:
 ```bash
     pip install -r requirements.txt
@@ -82,9 +83,14 @@ En caso contrario instalar desde el fichero `requirements.txt` o manualmente con
 o bien
 ```bash
     pip install pytest
+    pip install pytest-cov
+```
+Para ejecutar los tests, ejecutamos el siguiente comando en el directorio **raíz** del proyecto:
+```bash
+    pytest .
 ```
 
-Para ejecutar los test y mostrar su cobertura, debemos ejecutar el siguiente comando en el directorio **raíz** del
+Para ejecutar los test y además mostrar su cobertura, debemos ejecutar el siguiente comando en el directorio **raíz** del
 proyecto:
 ```bash
     pytest --cov=modules --cov-report=term-missing tests/

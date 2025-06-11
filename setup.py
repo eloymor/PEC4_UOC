@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 
-# Función para listar las dependencias desde el archivo requirements.txt
+# Función para listar las dependencias del archivo requirements.txt
+# directamente al setup (setup.install_requires)
 def parse_requirements(filename):
     with open(filename, 'r', encoding='utf-8') as file:
         lines = file.read().splitlines()
